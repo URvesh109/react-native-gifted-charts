@@ -54,7 +54,7 @@ export const StripAndLabel = props => {
               ? 0
               : containerHeight - pointerStripHeight,
           }}>
-          <Svg height="150" width="2">
+          <Svg height="140" width="2">
             <Defs>
               <LinearGradient
                 id="defaultUnits"
@@ -62,10 +62,9 @@ export const StripAndLabel = props => {
                 y1="0%"
                 x2="0%"
                 y2="100%">
-                <Stop offset="0%" stopColor="#000" stopOpacity="0.5" />
-                <Stop offset="50%" stopColor="#fff" stopOpacity="1" />
-                <Stop offset="80%" stopColor="#fff" stopOpacity="0.5" />
-                <Stop offset="100%" stopColor="#000" stopOpacity="0" />
+                <Stop offset="0%" stopColor="#A7A5A3" stopOpacity="0" />
+                <Stop offset="50%" stopColor="#A7A5A3" stopOpacity="1" />
+                <Stop offset="100%" stopColor="#A7A5A3" stopOpacity="0" />
               </LinearGradient>
             </Defs>
             <Rect
@@ -73,7 +72,7 @@ export const StripAndLabel = props => {
               x="1"
               y="1"
               width="2"
-              height="140"
+              height="120"
               rx="1"
               ry="1"
             />
