@@ -64,9 +64,21 @@ export const StripAndLabel = props => {
                   y1="0%"
                   x2="0%"
                   y2="100%">
-                  <Stop offset="0%" stopColor="#A7A5A3" stopOpacity="0" />
-                  <Stop offset="50%" stopColor="#A7A5A3" stopOpacity="1" />
-                  <Stop offset="100%" stopColor="#A7A5A3" stopOpacity="0" />
+                  <Stop
+                    offset="0%"
+                    stopColor={pointerStripColor}
+                    stopOpacity="0"
+                  />
+                  <Stop
+                    offset="50%"
+                    stopColor={pointerStripColor}
+                    stopOpacity="1"
+                  />
+                  <Stop
+                    offset="100%"
+                    stopColor={pointerStripColor}
+                    stopOpacity="0"
+                  />
                 </LinearGradient>
               </Defs>
               <Rect
