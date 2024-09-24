@@ -56,7 +56,7 @@ export const StripAndLabel = props => {
               : containerHeight - pointerStripHeight,
           }}>
           {stripLineGradient ? (
-            <Svg height="140" width="2">
+            <Svg>
               <Defs>
                 <LinearGradient
                   id="defaultUnits"
@@ -73,8 +73,12 @@ export const StripAndLabel = props => {
                 fill="url(#defaultUnits)"
                 x="1"
                 y="1"
-                width="2"
-                height="120"
+                width={pointerStripWidth}
+                height={
+                  pointerStripUptoDataPoint
+                    ? containerHeight - pointerYLocal + 5 - xAxisThickness
+                    : pointerStripHeight
+                }
                 rx="1"
                 ry="1"
               />
