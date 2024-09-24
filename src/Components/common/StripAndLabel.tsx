@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Svg, Rect, Defs, LinearGradient, Stop} from 'react-native-svg';
+import {Svg, Rect, Defs, LinearGradient, Stop, Line} from 'react-native-svg';
 import {getTopAndLeftForStripAndLabel} from 'gifted-charts-core';
 
 export const StripAndLabel = props => {
@@ -23,6 +23,7 @@ export const StripAndLabel = props => {
     secondaryPointerItem,
     pointerEvents,
     isBarChart,
+    stripLineGradient,
   } = props;
 
   const {top, left} = getTopAndLeftForStripAndLabel(props);
@@ -54,29 +55,51 @@ export const StripAndLabel = props => {
               ? 0
               : containerHeight - pointerStripHeight,
           }}>
-          <Svg height="140" width="2">
-            <Defs>
-              <LinearGradient
-                id="defaultUnits"
-                x1="0%"
-                y1="0%"
-                x2="0%"
-                y2="100%">
-                <Stop offset="0%" stopColor="#A7A5A3" stopOpacity="0" />
-                <Stop offset="50%" stopColor="#A7A5A3" stopOpacity="1" />
-                <Stop offset="100%" stopColor="#A7A5A3" stopOpacity="0" />
-              </LinearGradient>
-            </Defs>
-            <Rect
-              fill="url(#defaultUnits)"
-              x="1"
-              y="1"
-              width="2"
-              height="120"
-              rx="1"
-              ry="1"
-            />
-          </Svg>
+          {stripLineGradient ? (
+            <Svg height="140" width="2">
+              <Defs>
+                <LinearGradient
+                  id="defaultUnits"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%">
+                  <Stop offset="0%" stopColor="#A7A5A3" stopOpacity="0" />
+                  <Stop offset="50%" stopColor="#A7A5A3" stopOpacity="1" />
+                  <Stop offset="100%" stopColor="#A7A5A3" stopOpacity="0" />
+                </LinearGradient>
+              </Defs>
+              <Rect
+                fill="url(#defaultUnits)"
+                x="1"
+                y="1"
+                width="2"
+                height="120"
+                rx="1"
+                ry="1"
+              />
+            </Svg>
+          ) : (
+            <Svg>
+              <Line
+                stroke={pointerStripColor}
+                strokeWidth={pointerStripWidth}
+                strokeDasharray={
+                  pointerConfig?.strokeDashArray
+                    ? pointerConfig?.strokeDashArray
+                    : ''
+                }
+                x1={0}
+                y1={0}
+                x2={0}
+                y2={
+                  pointerStripUptoDataPoint
+                    ? containerHeight - pointerYLocal + 5 - xAxisThickness
+                    : pointerStripHeight
+                }
+              />
+            </Svg>
+          )}
         </View>
       ) : null}
 

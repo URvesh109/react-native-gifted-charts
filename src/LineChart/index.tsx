@@ -733,8 +733,8 @@ export const LineChart = (props: LineChartPropsType) => {
                         item.onPress
                           ? item.onPress(item, index)
                           : props.onPress
-                            ? props.onPress(item, index)
-                            : null;
+                          ? props.onPress(item, index)
+                          : null;
                       }}
                     />
                   )}
@@ -757,8 +757,8 @@ export const LineChart = (props: LineChartPropsType) => {
                         item.onPress
                           ? item.onPress(item, index)
                           : props.onPress
-                            ? props.onPress(item, index)
-                            : null;
+                          ? props.onPress(item, index)
+                          : null;
                       }}
                     />
                   )}
@@ -785,8 +785,8 @@ export const LineChart = (props: LineChartPropsType) => {
                           (item.dataPointLabelWidth
                             ? item.dataPointLabelWidth + 20
                             : props.dataPointLabelWidth
-                              ? props.dataPointLabelWidth + 20
-                              : 50) /
+                            ? props.dataPointLabelWidth + 20
+                            : 50) /
                             2 +
                           spacing * index,
                       },
@@ -990,6 +990,7 @@ export const LineChart = (props: LineChartPropsType) => {
       secondaryPointerItem,
       scrollX,
       pointerEvents,
+      stripLineGradient: props.stripLineGradient,
     });
   };
 
@@ -1848,43 +1849,43 @@ export const LineChart = (props: LineChartPropsType) => {
               })
             : null
           : isAnimated
-            ? renderAnimatedLine(
-                zIndex1,
-                points,
-                animatedWidth,
-                thickness1,
-                color1,
-                fillPoints,
-                startFillColor1,
-                endFillColor1,
-                startOpacity1,
-                endOpacity1,
-                strokeDashArray1,
-                props.showArrow1 || props.showArrows,
-                arrow1Points,
-                arrowStrokeWidth1,
-                arrowStrokeColor1,
-                arrowFillColor1,
-                0,
-              )
-            : renderLine(
-                zIndex1,
-                points,
-                thickness1,
-                color1,
-                fillPoints,
-                startFillColor1,
-                endFillColor1,
-                startOpacity1,
-                endOpacity1,
-                strokeDashArray1,
-                props.showArrow1 || props.showArrows,
-                arrow1Points,
-                arrowStrokeWidth1,
-                arrowStrokeColor1,
-                arrowFillColor1,
-                0,
-              )}
+          ? renderAnimatedLine(
+              zIndex1,
+              points,
+              animatedWidth,
+              thickness1,
+              color1,
+              fillPoints,
+              startFillColor1,
+              endFillColor1,
+              startOpacity1,
+              endOpacity1,
+              strokeDashArray1,
+              props.showArrow1 || props.showArrows,
+              arrow1Points,
+              arrowStrokeWidth1,
+              arrowStrokeColor1,
+              arrowFillColor1,
+              0,
+            )
+          : renderLine(
+              zIndex1,
+              points,
+              thickness1,
+              color1,
+              fillPoints,
+              startFillColor1,
+              endFillColor1,
+              startOpacity1,
+              endOpacity1,
+              strokeDashArray1,
+              props.showArrow1 || props.showArrows,
+              arrow1Points,
+              arrowStrokeWidth1,
+              arrowStrokeColor1,
+              arrowFillColor1,
+              0,
+            )}
         {secondaryPoints
           ? isAnimated
             ? renderAnimatedLine(
