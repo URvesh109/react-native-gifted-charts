@@ -757,8 +757,8 @@ export const LineChart = (props: LineChartPropsType) => {
                         item.onPress
                           ? item.onPress(item, index)
                           : props.onPress
-                            ? props.onPress(item, index)
-                            : null;
+                          ? props.onPress(item, index)
+                          : null;
                       }}
                     />
                   )}
@@ -781,8 +781,8 @@ export const LineChart = (props: LineChartPropsType) => {
                         item.onPress
                           ? item.onPress(item, index)
                           : props.onPress
-                            ? props.onPress(item, index)
-                            : null;
+                          ? props.onPress(item, index)
+                          : null;
                       }}
                     />
                   )}
@@ -809,8 +809,8 @@ export const LineChart = (props: LineChartPropsType) => {
                           (item.dataPointLabelWidth
                             ? item.dataPointLabelWidth + 20
                             : props.dataPointLabelWidth
-                              ? props.dataPointLabelWidth + 20
-                              : 50) /
+                            ? props.dataPointLabelWidth + 20
+                            : 50) /
                             2 +
                           spacing * index,
                       },
@@ -1060,6 +1060,7 @@ export const LineChart = (props: LineChartPropsType) => {
       hasDataSet: !!dataSet,
       containsNegative: mostNegativeValue < 0,
       horizontalStripConfig: pointerConfig?.horizontalStripConfig,
+      stripLineGradient: props.stripLineGradient,
     });
   };
 
